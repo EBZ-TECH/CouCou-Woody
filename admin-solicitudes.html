@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Solicitudes — Admin Coucou Woody</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="modules.css" />
+  <link rel="stylesheet" href="admin.css" />
+</head>
+<body>
+  <div class="admin-layout">
+    <!-- Sidebar -->
+    <aside class="admin-sidebar">
+      <div class="admin-logo">
+        <h2>COUCOU Woody</h2>
+        <p>Panel de Administración</p>
+      </div>
+      
+      <nav class="admin-nav">
+        <a href="admin-dashboard.html" class="nav-item">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z"/></svg>
+          <span>Dashboard</span>
+        </a>
+        <a href="admin-solicitudes.html" class="nav-item active">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 3h-4.18C14.4 1.84 13.3 1 12 1c-1.3 0-2.4.84-2.82 2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 0c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zm2 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg>
+          <span>Solicitudes</span>
+        </a>
+        <a href="admin-clientes.html" class="nav-item">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+          <span>Clientes</span>
+        </a>
+        <a href="admin-proyectos.html" class="nav-item">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 6h-2.18c.11-.31.18-.65.18-1 0-1.66-1.34-3-3-3-1.05 0-1.96.54-2.5 1.35l-.5.67-.5-.68C10.96 2.54 10.05 2 9 2 7.34 2 6 3.34 6 5c0 .35.07.69.18 1H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-5-2c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zM9 4c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zm11 15H4v-2h16v2zm0-5H4V8h5.08L7 10.83 8.62 12 11 8.76l1-1.36 1 1.36L15.38 12 17 10.83 14.92 8H20v6z"/></svg>
+          <span>Proyectos</span>
+        </a>
+        <a href="admin-inventario.html" class="nav-item">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.11 0-1.99.89-1.99 2L2 18c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V6c0-1.11-.89-2-2-2zm0 14H4v-6h16v6zm0-10H4V6h16v2z"/></svg>
+          <span>Inventario</span>
+        </a>
+        <a href="admin-cotizaciones.html" class="nav-item">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg>
+          <span>Cotizaciones</span>
+        </a>
+        <a href="admin-cuentas-cobro.html" class="nav-item">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 14V6c0-1.1-.9-2-2-2H3c-1.1 0-2 .9-2 2v8c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zm-9-1c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3zm13-6v11c0 1.1-.9 2-2 2H4v-2h17V7h2z"/></svg>
+          <span>Cuentas de Cobro</span>
+        </a>
+        <a href="admin-personal.html" class="nav-item">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+          <span>Personal</span>
+        </a>
+        <a href="admin-pagos.html" class="nav-item">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+          <span>Pagos</span>
+        </a>
+        <a href="admin-auditoria.html" class="nav-item">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/></svg>
+          <span>Auditoría</span>
+        </a>
+      </nav>
+    </aside>
+
+    <!-- Main content -->
+    <main class="admin-main">
+      <header class="admin-header">
+        <div class="admin-header-left">
+          <h1>Gestión de Solicitudes</h1>
+        </div>
+        <div class="admin-header-right">
+          <button class="btn btn-secondary" onclick="logout()" style="display: flex; align-items: center; gap: 8px;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M17 7l-1.41 1.41L18.17 11H8v2h10.17l-2.58 2.58L17 17l5-5zM4 5h8V3H4c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h8v-2H4V5z"/>
+            </svg>
+            Cerrar Sesión
+          </button>
+        </div>
+      </header>
+
+      <div class="admin-content">
+        <p style="color: var(--muted-foreground); margin-bottom: 24px;">
+          Administre y revise las solicitudes de servicio de los clientes
+        </p>
+
+        <div class="data-table">
+          <div class="table-header">
+            <h2>Solicitudes de Servicio</h2>
+            <div class="table-search">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+              <input type="text" id="searchInput" placeholder="Buscar por cliente, correo o teléfono...">
+            </div>
+          </div>
+          <table>
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Cliente</th>
+                <th>Correo</th>
+                <th>Teléfono</th>
+                <th>Fecha</th>
+                <th>Estado</th>
+                <th style="text-align: right;">Acciones</th>
+              </tr>
+            </thead>
+            <tbody id="solicitudes-tbody">
+              <tr><td colspan="7" style="text-align: center; padding: 40px;">Cargando...</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- Modal Detalle -->
+  <div id="detailModal" class="modal-overlay">
+    <div class="modal-content" style="max-width: 700px;">
+      <div class="modal-header">
+        <h2>Detalle de Solicitud</h2>
+        <p>Información completa de la solicitud de servicio</p>
+      </div>
+      <div class="modal-body" id="modalBody"></div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" onclick="closeModal()">Cerrar</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="db.js"></script>
+  <script>
+    let solicitudes = [];
+
+    // --- NUEVO: sincroniza solicitudes pendientes/aceptadas con proyectos ---
+    // Si hay una solicitud con estado 'pendiente' o 'aceptada' y no existe un proyecto vinculado,
+    // crea un proyecto mínimo relacionado (campo solicitudId) para que aparezca en admin-proyectos.
+    function syncSolicitudesToProyectos() {
+      const allSolicitudes = DB.get('solicitudes');
+      const proyectos = DB.get('proyectos');
+
+      allSolicitudes.forEach(sol => {
+        if (sol.estado === 'pendiente' || sol.estado === 'aceptada') {
+          // Ver si ya existe un proyecto vinculado a esta solicitud
+          const existe = proyectos.some(p => String(p.solicitudId) === String(sol.id));
+          if (!existe) {
+            // Crear proyecto asociado (mínimo). No tocamos otros campos importantes.
+            const nombreCorto = (sol.descripcion || '').slice(0, 50);
+            const proyectoData = {
+              nombre: `Solicitud: ${sol.cliente} - ${nombreCorto}`,
+              cliente: sol.cliente,
+              clienteId: sol.clienteId || null,
+              responsable: 'Por asignar',
+              fechaInicio: sol.fecha || new Date().toISOString().split('T')[0],
+              fechaFin: '',
+              estado: 'pendiente', // lo dejamos pendiente por defecto
+              progreso: 0,
+              presupuesto: 0,
+              solicitudId: sol.id // vínculo claro
+            };
+            const nuevo = DB.create('proyectos', proyectoData);
+            DB.logAudit('system', 'Sincronizó solicitud → proyecto', 'Proyectos', `Se creó proyecto ${nuevo.id} a partir de la solicitud ${sol.id}`);
+          }
+        }
+      });
+    }
+
+    function loadSolicitudes() {
+      // Sincronizar primero para que proyectos reflejen solicitudes pendientes/aceptadas
+      syncSolicitudesToProyectos();
+
+      // Siempre recargar desde la BD para obtener datos actualizados
+      solicitudes = DB.get('solicitudes');
+      renderSolicitudes(solicitudes);
+    }
+
+    function renderSolicitudes(data) {
+      const tbody = document.getElementById('solicitudes-tbody');
+      
+      if (data.length === 0) {
+        tbody.innerHTML = '<tr><td colspan="7" style="text-align: center; padding: 40px;">No hay solicitudes</td></tr>';
+        return;
+      }
+
+      tbody.innerHTML = data.map(sol => `
+        <tr id="row-${sol.id}">
+          <td>${sol.id}</td>
+          <td>${sol.cliente}</td>
+          <td>${sol.correo}</td>
+          <td>${sol.telefono}</td>
+          <td>${sol.fecha} ${sol.hora || ''}</td>
+          <td><span class="badge badge-${sol.estado}">${sol.estado}</span></td>
+          <td style="text-align: right;">
+            <button class="btn btn-icon btn-ghost" onclick="verDetalle('${sol.id}')" title="Ver detalle">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+            </button>
+            ${sol.estado === 'pendiente' ? `
+              <button class="btn btn-icon btn-ghost" onclick="aceptar('${sol.id}')" title="Aceptar" style="color: #16a34a;">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+              </button>
+              <button class="btn btn-icon btn-ghost" onclick="rechazar('${sol.id}')" title="Rechazar" style="color: #dc2626;">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+              </button>
+            ` : ''}
+           <button class="btn btn-icon btn-ghost" onclick="eliminarSolicitud('${sol.id}')" title="Eliminar" style="color: #b91c1c;">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M16 9v10H8V9h8m-1.5-6h-5l-1 1H5v2h14V4h-3.5l-1-1z"/>
+    </svg>
+  </button>
+</td>
+        </tr>
+      `).join('');
+    }
+
+    // Eliminar solicitud y proyectos vinculados
+    function eliminarSolicitud(id) {
+      const confirmar = confirm(`¿Seguro que deseas eliminar la solicitud ${id}?`);
+      if (!confirmar) return;
+
+      // Eliminar proyectos vinculados (si existen)
+      const proyectos = DB.get('proyectos');
+      proyectos.forEach(p => {
+        if (String(p.solicitudId) === String(id)) {
+          DB.delete('proyectos', p.id);
+          DB.logAudit('admin@lourdes.com', 'Eliminó proyecto vinculado', 'Proyectos', `Proyecto ${p.id} eliminado por eliminación de solicitud ${id}`);
+        }
+      });
+
+      const eliminado = DB.delete('solicitudes', id);
+
+      if (eliminado) {
+        DB.logAudit('admin@lourdes.com', 'Eliminó solicitud', 'Solicitudes', `Solicitud ${id} eliminada`);
+        alert(`🗑️ Solicitud ${id} eliminada correctamente`);
+        loadSolicitudes(); // Recargar la tabla
+      } else {
+        alert(`⚠️ No se pudo eliminar la solicitud ${id}.`);
+      }
+    }
+
+    function verDetalle(id) {
+      const sol = solicitudes.find(s => String(s.id) === String(id));
+
+      if (!sol) return;
+
+      const modalBody = document.getElementById('modalBody');
+      modalBody.innerHTML = `
+        <div style="margin-bottom: 20px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+            <h3>Solicitud ${sol.id}</h3>
+            <span class="badge badge-${sol.estado}">${sol.estado}</span>
+          </div>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px;">
+            <div>
+              <p style="font-size: 0.875rem; color: var(--muted-foreground); margin: 0 0 4px 0;">Cliente</p>
+              <p style="margin: 0;">${sol.cliente}</p>
+            </div>
+            <div>
+              <p style="font-size: 0.875rem; color: var(--muted-foreground); margin: 0 0 4px 0;">Estado</p>
+              <p style="margin: 0; text-transform: capitalize;">${sol.estado}</p>
+            </div>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 12px; margin-bottom: 16px;">
+            <div style="display: flex; align-items: center; gap: 8px; color: var(--muted-foreground);">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+              <span>${sol.correo}</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 8px; color: var(--muted-foreground);">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+              <span>${sol.telefono}</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 8px; color: var(--muted-foreground);">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z"/></svg>
+              <span>${sol.fecha}</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 8px; color: var(--muted-foreground);">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>
+              <span>${sol.hora}</span>
+            </div>
+          </div>
+          <div>
+            <p style="font-size: 0.875rem; color: var(--muted-foreground); margin: 0 0 8px 0;">Descripción del Servicio</p>
+            <div style="background: var(--muted); padding: 16px; border-radius: 8px;">
+              <p style="margin: 0;">${sol.descripcion}</p>
+            </div>
+          </div>
+          ${sol.estado === 'pendiente' ? `
+            <div style="display: flex; gap: 12px; margin-top: 20px;">
+              <button class="btn btn-primary" style="flex: 1;" onclick="aceptar('${sol.id}'); closeModal();">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                Aceptar Solicitud
+              </button>
+              <button class="btn btn-secondary" style="flex: 1; background: #dc2626; color: white;" onclick="rechazar('${sol.id}'); closeModal();">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+                Rechazar Solicitud
+              </button>
+            </div>
+          ` : ''}
+        </div>
+      `;
+      
+      document.getElementById('detailModal').classList.add('show');
+    }
+
+    // Aceptar: actualizar solicitud a 'aceptada' y crear proyecto asociado si no existe
+    function aceptar(id) {
+      console.log('Aceptando solicitud ID:', id, 'Tipo:', typeof id);
+      
+      // Actualizar en la BD
+      const updated = DB.update('solicitudes', id, { estado: 'aceptada' });
+      
+      console.log('Resultado de actualización:', updated);
+      
+      if (updated !== null) {
+        // Crear proyecto asociado si no existe
+        const proyectos = DB.get('proyectos');
+        const existe = proyectos.some(p => String(p.solicitudId) === String(id));
+        if (!existe) {
+          // Obtener la solicitud actualizada
+          const sol = DB.getById('solicitudes', id);
+          const nombreCorto = (sol.descripcion || '').slice(0, 50);
+          const proyectoData = {
+            nombre: `Solicitud: ${sol.cliente} - ${nombreCorto}`,
+            cliente: sol.cliente,
+            clienteId: sol.clienteId || null,
+            responsable: 'Por asignar',
+            fechaInicio: sol.fecha || new Date().toISOString().split('T')[0],
+            fechaFin: '',
+            estado: 'pendiente',
+            progreso: 0,
+            presupuesto: 0,
+            solicitudId: sol.id
+          };
+          const newProj = DB.create('proyectos', proyectoData);
+          DB.logAudit('admin@lourdes.com', 'Creó proyecto desde solicitud', 'Proyectos', `Proyecto ${newProj.id} creado por aceptar la solicitud ${id}`);
+        }
+
+        // Registrar en auditoría
+        DB.logAudit('admin@lourdes.com', 'Aceptó solicitud', 'Solicitudes', `Solicitud ${id} aceptada`);
+        
+        // Mostrar confirmación
+        alert('✓ Solicitud ' + id + ' aceptada exitosamente');
+        
+        // Recargar datos desde la BD
+        loadSolicitudes();
+      } else {
+        alert('Error al actualizar la solicitud. ID: ' + id + ' no encontrado en la base de datos.');
+        console.error('No se pudo actualizar. Solicitudes actuales:', DB.get('solicitudes'));
+      }
+    }
+
+    // Rechazar: eliminar la solicitud y proyectos vinculados
+    function rechazar(id) {
+      console.log('Rechazando solicitud ID:', id, 'Tipo:', typeof id);
+      
+      // Eliminar proyectos vinculados (si existen)
+      const proyectos = DB.get('proyectos');
+      proyectos.forEach(p => {
+        if (String(p.solicitudId) === String(id)) {
+          DB.delete('proyectos', p.id);
+          DB.logAudit('admin@lourdes.com', 'Eliminó proyecto vinculado', 'Proyectos', `Proyecto ${p.id} eliminado por rechazo de solicitud ${id}`);
+        }
+      });
+
+      // Eliminar la solicitud
+      const eliminado = DB.delete('solicitudes', id);
+      
+      if (eliminado) {
+        DB.logAudit('admin@lourdes.com', 'Rechazó solicitud', 'Solicitudes', `Solicitud ${id} rechazada y eliminada`);
+        
+        // Mostrar confirmación
+        alert('✗ Solicitud ' + id + ' rechazada y eliminada');
+        
+        // Recargar datos desde la BD
+        loadSolicitudes();
+      } else {
+        alert('Error al eliminar la solicitud. ID: ' + id + ' no encontrado en la base de datos.');
+        console.error('No se pudo eliminar. Solicitudes actuales:', DB.get('solicitudes'));
+      }
+    }
+
+    function closeModal() {
+      document.getElementById('detailModal').classList.remove('show');
+    }
+
+    function logout() {
+      if (confirm('¿Desea cerrar sesión?')) {
+        localStorage.removeItem('user_session');
+        window.location.href = 'index.html';
+      }
+    }
+
+    // Búsqueda
+    document.getElementById('searchInput').addEventListener('input', (e) => {
+      const term = e.target.value.toLowerCase();
+      const filtered = solicitudes.filter(s =>
+        s.cliente.toLowerCase().includes(term) ||
+        s.correo.toLowerCase().includes(term) ||
+        (s.telefono || '').includes(term)
+      );
+      renderSolicitudes(filtered);
+    });
+
+    // Cerrar modal al hacer clic fuera
+    document.getElementById('detailModal').addEventListener('click', (e) => {
+      if (e.target.id === 'detailModal') closeModal();
+    });
+
+    window.addEventListener('DOMContentLoaded', loadSolicitudes);
+  </script>
+</body>
+</html>

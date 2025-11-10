@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Coucou Woody — Mockup</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700;900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<!-- ==========================================
+     Encabezado superior con íconos pequeños
+     ========================================== -->
+<header class="topbar" aria-hidden="true">
+  <!-- Contenedor que agrupa todos los íconos -->
+  <div class="top-icons">
+
+    <!-- =============================
+         Botón con ícono de casa (home)
+         ============================= -->
+    <a href="index.html" class="icon-button">
+      <!-- SVG: casa estilizada -->
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="#a54939">
+        <!-- Techo triangular + paredes de la casa -->
+        <path d="M12 3L3 10h3v8h6v-5h0v5h6v-8h3z"/>
+      </svg>
+    </a>
+
+    <!-- =============================
+         Botón Solicitar Servicio
+         ============================= -->
+    <a href="solicitar-servicio.html" class="icon-button" style="text-decoration: none;">
+      <span style="color: #a54939; font-weight: 600; font-size: 14px;">Solicitar Servicio</span>
+    </a>
+
+    <!-- =============================
+         Botón Consultar Estado
+         ============================= -->
+    <a href="consultar-estado.html" class="icon-button" style="text-decoration: none;">
+      <span style="color: #a54939; font-weight: 600; font-size: 14px;">Consultar Estado</span>
+    </a>
+
+    <!-- =============================
+         Botón con ícono de usuario (redirige a login)
+         ============================= -->
+    <a href="login.html" class="icon-button">
+      <!-- SVG: círculo (cabeza) + curva (cuerpo) -->
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="#a54939">
+        <!-- Cabeza del usuario -->
+        <circle cx="12" cy="8" r="4"/>
+        <!-- Hombros y torso del usuario -->
+        <path d="M4 20c0-4 4-6 8-6s8 2 8 6"/>
+      </svg>
+    </a>
+
+  </div> <!-- /top-icons -->
+</header>
+
+
+<!-- =====================================================
+     Modal de login (se abre al hacer clic en el ícono usuario)
+     ===================================================== -->
+<div id="login-modal" class="modal">
+
+  <!-- Contenedor del contenido del login -->
+  <div class="modal-content">
+    <!-- Logo -->
+    <div class="logo">COUCOU <br> Woody</div>
+
+    <!-- Título -->
+    <h2>CUSTOMER LOGIN</h2>
+
+    <!-- Campo usuario -->
+    <div class="input-group">
+      <span class="icon">👤</span>
+      <input type="text" placeholder="Usuario">
+    </div>
+
+    <!-- Campo contraseña -->
+    <div class="input-group">
+      <span class="icon">🔒</span>
+      <input type="password" placeholder="Contraseña">
+      <span class="toggle-pass">👁️</span>
+    </div>
+
+    <!-- Botón de ingresar -->
+    <button class="btn-login">INGRESAR</button>
+  </div>
+</div>
+
+
+
+
+  <!-- HERO (pantalla principal) -->
+  <main>
+    <section class="hero">
+      <p class="slogan">Si lo puedes soñar lo puedes realizar</p>
+
+      <div class="collage-wrap">
+        <!-- mosaico con tamaños variados (tomados de carpeta img/) -->
+        <img src="img/col1.jpg"   alt="" class="tile t1">
+        <img src="img/col2.jpg"   alt="" class="tile t2">
+        <img src="img/col3.jpg"   alt="" class="tile t3">
+        <img src="img/col4.jpg"   alt="" class="tile t4">
+        <img src="img/col5.jpg"   alt="" class="tile t5">
+        <img src="img/col6.jpg"   alt="" class="tile t6">
+        <img src="img/col7.jpeg"  alt="" class="tile t7">
+        <img src="img/col8.jpeg"  alt="" class="tile t8">
+        <img src="img/col9.jpeg"  alt="" class="tile t9">
+        <img src="img/col10.jpeg" alt="" class="tile t10">
+        <img src="img/col11.jpeg" alt="" class="tile t11">
+        <img src="img/col12.jpeg" alt="" class="tile t12">
+        <img src="img/col13.jpeg" alt="" class="tile t13">
+        <img src="img/col14.jpeg" alt="" class="tile t14">
+        <img src="img/col15.jpeg" alt="" class="tile t15">
+        <!-- extras para igualar la referencia (pueden repetir origen) -->
+        <img src="img/col4.jpg"   alt="" class="tile t16">
+        <img src="img/col5.jpg"   alt="" class="tile t17">
+        <img src="img/col6.jpg"   alt="" class="tile t18">
+        <img src="img/col3.jpg"   alt="" class="tile t19">
+        <img src="img/col2.jpg"   alt="" class="tile t20">
+        <img src="img/col11.jpeg" alt="" class="tile t21">
+        <img src="img/col10.jpeg" alt="" class="tile t22">
+        <img src="img/col9.jpeg"  alt="" class="tile t23">
+        <img src="img/col8.jpeg"  alt="" class="tile t24">
+
+        <!-- logo circular central -->
+        <div class="logo-circle" role="img" aria-label="Coucou Woody">
+          <div class="logo-text">
+            <div class="logo-main">COUCOU</div>
+            <div class="logo-sub">•Woody•</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-buttons">
+        <a href="solicitar-servicio.html" class="btn" style="text-decoration: none; display: inline-block;">Solicitar Servicio</a>
+        <a href="consultar-estado.html" class="btn outline" style="text-decoration: none; display: inline-block;">Consultar Estado</a>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="about">
+      <div class="about-left">
+        <h1 class="who">¿Quienes<br> somos?</h1>
+
+        <div class="about-text">
+          <p>
+            Información corporativa, visión, misión, etc. Información corporativa, visión, misión, etc.
+            Información corporativa, visión, misión, etc. Información corporativa, visión, misión.
+          </p>
+
+          <p>
+            Información corporativa, visión, misión, etc. Información corporativa, visión, misión, etc.
+            Información corporativa, visión, misión, etc.
+          </p>
+        </div>
+      </div>
+
+      <div class="about-right">
+        <!-- imagen superior (naranja) -->
+        <img src="img/about-top.jpeg" alt="" class="about-img about-top">
+
+        <!-- imagen inferior con sombra (delante) -->
+        <img src="img/about-bottom.jpeg" alt="" class="about-img about-bottom">
+      </div>
+    </section>
+  </main>
+
+<script>
+  // El modal de login ya no se usa, ahora redirige a login.html
+  // El código del modal se mantiene por si se necesita en el futuro
+</script>
+
+</body>
+</html>

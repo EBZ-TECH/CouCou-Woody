@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Inventario — Admin Coucou Woody</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="modules.css" />
+  <link rel="stylesheet" href="admin.css" />
+</head>
+<body>
+  <div class="admin-layout">
+    <aside class="admin-sidebar">
+      <div class="admin-logo"><h2>COUCOU Woody</h2><p>Panel de Administración</p></div>
+      <nav class="admin-nav">
+        <a href="admin-dashboard.html" class="nav-item"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z"/></svg><span>Dashboard</span></a>
+        <a href="admin-solicitudes.html" class="nav-item"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 3h-4.18C14.4 1.84 13.3 1 12 1c-1.3 0-2.4.84-2.82 2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 0c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zm2 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg><span>Solicitudes</span></a>
+        <a href="admin-clientes.html" class="nav-item"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg><span>Clientes</span></a>
+        <a href="admin-proyectos.html" class="nav-item"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 6h-2.18c.11-.31.18-.65.18-1 0-1.66-1.34-3-3-3-1.05 0-1.96.54-2.5 1.35l-.5.67-.5-.68C10.96 2.54 10.05 2 9 2 7.34 2 6 3.34 6 5c0 .35.07.69.18 1H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-5-2c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zM9 4c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zm11 15H4v-2h16v2zm0-5H4V8h5.08L7 10.83 8.62 12 11 8.76l1-1.36 1 1.36L15.38 12 17 10.83 14.92 8H20v6z"/></svg><span>Proyectos</span></a>
+        <a href="admin-inventario.html" class="nav-item active"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.11 0-1.99.89-1.99 2L2 18c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V6c0-1.11-.89-2-2-2zm0 14H4v-6h16v6zm0-10H4V6h16v2z"/></svg><span>Inventario</span></a>
+        <a href="admin-cotizaciones.html" class="nav-item"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg><span>Cotizaciones</span></a>
+        <a href="admin-cuentas-cobro.html" class="nav-item"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 14V6c0-1.1-.9-2-2-2H3c-1.1 0-2 .9-2 2v8c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zm-9-1c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3zm13-6v11c0 1.1-.9 2-2 2H4v-2h17V7h2z"/></svg><span>Cuentas de Cobro</span></a>
+        <a href="admin-personal.html" class="nav-item"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg><span>Personal</span></a>
+        <a href="admin-pagos.html" class="nav-item"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg><span>Pagos</span></a>
+        <a href="admin-auditoria.html" class="nav-item"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/></svg><span>Auditoría</span></a>
+      </nav>
+    </aside>
+
+    <main class="admin-main">
+      <header class="admin-header">
+        <div class="admin-header-left"><h1>Gestión de Inventario</h1></div>
+        <div class="admin-header-right">
+          <button class="btn btn-secondary" onclick="logout()" style="display: flex; align-items: center; gap: 8px;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M17 7l-1.41 1.41L18.17 11H8v2h10.17l-2.58 2.58L17 17l5-5zM4 5h8V3H4c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h8v-2H4V5z"/>
+            </svg>
+            Cerrar Sesión
+          </button>
+        </div>
+      </header>
+
+      <div class="admin-content">
+        <p style="color: var(--muted-foreground); margin-bottom: 24px;">Administre los elementos del inventario de la empresa</p>
+
+        <div class="data-table">
+          <div class="table-header">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+              <h2>Items de Inventario</h2>
+              <button class="btn btn-primary" onclick="showAddModal()"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg> Agregar Item</button>
+            </div>
+            <div class="table-search">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+              <input type="text" id="searchInput" placeholder="Buscar item...">
+            </div>
+          </div>
+          <table>
+            <thead>
+              <tr><th>ID</th><th>Nombre</th><th>Categoría</th><th>Cantidad</th><th>Unidad</th><th>Precio Unit.</th><th>Ubicación</th><th style="text-align: right;">Acciones</th></tr>
+            </thead>
+            <tbody id="inventario-tbody"><tr><td colspan="8" style="text-align: center; padding: 40px;">Cargando...</td></tr></tbody>
+          </table>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <div id="formModal" class="modal-overlay">
+    <div class="modal-content">
+      <div class="modal-header"><h2 id="formTitle">Agregar Item</h2></div>
+      <form id="itemForm" class="modal-body">
+        <div class="form-group"><label class="form-label">Nombre *</label><input type="text" name="nombre" class="form-input" required></div>
+        <div class="form-group"><label class="form-label">Categoría *</label><input type="text" name="categoria" class="form-input" required></div>
+        <div class="form-group"><label class="form-label">Cantidad *</label><input type="number" name="cantidad" class="form-input" required min="0"></div>
+        <div class="form-group"><label class="form-label">Unidad *</label><input type="text" name="unidad" class="form-input" required placeholder="ej: Unidades, Litros, Kg"></div>
+        <div class="form-group"><label class="form-label">Precio Unitario (COP)</label><input type="number" name="precioUnitario" class="form-input" min="0"></div>
+        <div class="form-group"><label class="form-label">Ubicación</label><input type="text" name="ubicacion" class="form-input"></div>
+      </form>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" onclick="closeModal()">Cancelar</button>
+        <button class="btn btn-primary" onclick="submitForm()">Guardar</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="db.js"></script>
+  <script>
+    let inventario = [];
+
+    function loadInventario() {
+      inventario = DB.get('inventario');
+      renderInventario(inventario);
+    }
+
+    function renderInventario(data) {
+      const tbody = document.getElementById('inventario-tbody');
+      if (data.length === 0) {
+        tbody.innerHTML = '<tr><td colspan="8" style="text-align: center; padding: 40px;">No hay items</td></tr>';
+        return;
+      }
+      tbody.innerHTML = data.map(i => `
+        <tr>
+          <td>#${i.id}</td>
+          <td>${i.nombre}</td>
+          <td>${i.categoria}</td>
+          <td><strong>${i.cantidad}</strong></td>
+          <td>${i.unidad}</td>
+          <td>$${i.precioUnitario?.toLocaleString('es-CO') || '-'}</td>
+          <td>${i.ubicacion || '-'}</td>
+          <td style="text-align: right;">
+            <button class="btn btn-icon btn-ghost" onclick="editItem('${i.id}')" title="Editar"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg></button>
+            <button class="btn btn-icon btn-ghost" onclick="deleteItem('${i.id}')" title="Eliminar" style="color: #dc2626;"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"/></svg></button>
+          </td>
+        </tr>
+      `).join('');
+    }
+
+    function showAddModal() {
+      document.getElementById('formTitle').textContent = 'Agregar Item';
+      document.getElementById('itemForm').reset();
+      document.getElementById('formModal').classList.add('show');
+    }
+
+    function editItem(id) {
+      const item = inventario.find(i => i.id === id);
+      if (!item) return;
+      document.getElementById('formTitle').textContent = 'Editar Item';
+      const form = document.getElementById('itemForm');
+      form.nombre.value = item.nombre;
+      form.categoria.value = item.categoria;
+      form.cantidad.value = item.cantidad;
+      form.unidad.value = item.unidad;
+      form.precioUnitario.value = item.precioUnitario || '';
+      form.ubicacion.value = item.ubicacion || '';
+      form.dataset.editId = id;
+      document.getElementById('formModal').classList.add('show');
+    }
+
+    function submitForm() {
+      const form = document.getElementById('itemForm');
+      if (!form.checkValidity()) { form.reportValidity(); return; }
+      const data = { nombre: form.nombre.value, categoria: form.categoria.value, cantidad: parseInt(form.cantidad.value), unidad: form.unidad.value, precioUnitario: form.precioUnitario.value ? parseInt(form.precioUnitario.value) : null, ubicacion: form.ubicacion.value };
+      if (form.dataset.editId) {
+        DB.update('inventario', form.dataset.editId, data);
+        DB.logAudit('admin@lourdes.com', 'Actualizó item', 'Inventario', `Item #${form.dataset.editId}`);
+        alert('Item actualizado');
+        delete form.dataset.editId;
+      } else {
+        const newItem = DB.create('inventario', data);
+        DB.logAudit('admin@lourdes.com', 'Agregó item', 'Inventario', `Item #${newItem.id} - ${data.nombre}`);
+        alert('Item agregado');
+      }
+      closeModal();
+      loadInventario();
+    }
+
+    function deleteItem(id) {
+      if (!confirm('¿Eliminar este item?')) return;
+      DB.delete('inventario', id);
+      DB.logAudit('admin@lourdes.com', 'Eliminó item', 'Inventario', `Item #${id}`);
+      alert('Item eliminado');
+      loadInventario();
+    }
+
+    function closeModal() {
+      document.getElementById('formModal').classList.remove('show');
+      document.getElementById('itemForm').reset();
+      delete document.getElementById('itemForm').dataset.editId;
+    }
+
+    function logout() {
+      if (confirm('¿Cerrar sesión?')) {
+        localStorage.removeItem('user_session');
+        window.location.href = 'index.html';
+      }
+    }
+
+    document.getElementById('searchInput').addEventListener('input', (e) => {
+      const term = e.target.value.toLowerCase();
+      const filtered = inventario.filter(i => i.nombre.toLowerCase().includes(term) || i.categoria.toLowerCase().includes(term));
+      renderInventario(filtered);
+    });
+
+    document.getElementById('formModal').addEventListener('click', (e) => { if (e.target.id === 'formModal') closeModal(); });
+
+    window.addEventListener('DOMContentLoaded', loadInventario);
+  </script>
+</body>
+</html>
+

@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Solicitar Servicio — Coucou Woody</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="modules.css" />
+  <style>
+    .service-page {
+      min-height: 100vh;
+      background: var(--bg);
+      padding: 20px;
+    }
+    .service-container {
+      max-width: 800px;
+      margin: 40px auto;
+    }
+    .service-card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 40px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    }
+    .service-title {
+      font-size: 32px;
+      font-weight: 700;
+      color: #4a2e27;
+      margin-bottom: 8px;
+    }
+    .service-subtitle {
+      color: #666;
+      margin-bottom: 30px;
+      font-size: 14px;
+    }
+    .service-form {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+    @media (max-width: 640px) {
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+    }
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .form-label {
+      font-weight: 500;
+      color: #4a2e27;
+      font-size: 14px;
+    }
+    .form-input, .form-textarea {
+      padding: 12px 16px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      font-size: 14px;
+      font-family: 'Poppins', sans-serif;
+      background: #f9f9f9;
+      transition: border-color 0.3s;
+    }
+    .form-textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+    .form-input:focus, .form-textarea:focus {
+      outline: none;
+      border-color: #a54939;
+      background: #fff;
+    }
+    .form-actions {
+      display: flex;
+      gap: 16px;
+      margin-top: 10px;
+    }
+    .form-btn {
+      flex: 1;
+      padding: 14px;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s;
+      font-family: 'Poppins', sans-serif;
+      border: none;
+    }
+    .form-btn-primary {
+      background: #a54939;
+      color: #fff;
+    }
+    .form-btn-primary:hover {
+      background: #8C4D3C;
+    }
+    .form-btn-secondary {
+      background: transparent;
+      color: #4a2e27;
+      border: 1px solid #ddd;
+    }
+    .form-btn-secondary:hover {
+      background: #f5f5f5;
+    }
+    .success-screen {
+      text-align: center;
+      padding: 60px 40px;
+    }
+    .success-icon {
+      width: 80px;
+      height: 80px;
+      background: #d4edda;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 24px;
+    }
+    .success-icon svg {
+      width: 48px;
+      height: 48px;
+      fill: #28a745;
+    }
+    .success-title {
+      font-size: 28px;
+      font-weight: 700;
+      color: #4a2e27;
+      margin-bottom: 16px;
+    }
+    .success-message {
+      color: #666;
+      margin-bottom: 30px;
+      line-height: 1.6;
+    }
+    .success-details {
+      background: #f5f5f5;
+      padding: 24px;
+      border-radius: 8px;
+      margin-bottom: 30px;
+      text-align: left;
+    }
+    .success-details h3 {
+      font-size: 18px;
+      margin-bottom: 16px;
+      color: #4a2e27;
+    }
+    .success-details p {
+      margin: 8px 0;
+      color: #666;
+    }
+    .success-details strong {
+      color: #4a2e27;
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="top-icons">
+      <a href="index.html" class="icon-button">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="#a54939">
+          <path d="M12 3L3 10h3v8h6v-5h0v5h6v-8h3z"/>
+        </svg>
+      </a>
+      <a href="solicitar-servicio.html" class="icon-button" style="text-decoration: none;">
+        <span style="color: #a54939; font-weight: 600; font-size: 14px;">Solicitar</span>
+      </a>
+      <a href="consultar-estado.html" class="icon-button" style="text-decoration: none;">
+        <span style="color: #a54939; font-weight: 600; font-size: 14px;">Consultar</span>
+      </a>
+      <a href="login.html" class="icon-button">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="#a54939">
+          <circle cx="12" cy="8" r="4"/>
+          <path d="M4 20c0-4 4-6 8-6s8 2 8 6"/>
+        </svg>
+      </a>
+    </div>
+  </header>
+
+  <div class="service-page">
+    <div class="service-container">
+      <div id="form-screen" class="service-card">
+        <h1 class="service-title">Solicitar Servicio</h1>
+        <p class="service-subtitle">
+          Complete el formulario para solicitar un servicio. Nos pondremos en contacto 
+          con usted lo antes posible.
+        </p>
+
+        <form id="service-form" class="service-form">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="nombre" class="form-label">Nombre Completo *</label>
+              <input 
+                type="text" 
+                id="nombre" 
+                name="nombre" 
+                class="form-input" 
+                placeholder="Juan Pérez" 
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="correo" class="form-label">Correo Electrónico *</label>
+              <input 
+                type="email" 
+                id="correo" 
+                name="correo" 
+                class="form-input" 
+                placeholder="correo@ejemplo.com" 
+                required
+              />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="telefono" class="form-label">Teléfono *</label>
+            <input 
+              type="tel" 
+              id="telefono" 
+              name="telefono" 
+              class="form-input" 
+              placeholder="300 123 4567" 
+              required
+            />
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="fecha" class="form-label">Fecha Preferida *</label>
+              <input 
+                type="date" 
+                id="fecha" 
+                name="fecha" 
+                class="form-input" 
+                required
+                min=""
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="hora" class="form-label">Hora Preferida *</label>
+              <input 
+                type="time" 
+                id="hora" 
+                name="hora" 
+                class="form-input" 
+                required
+              />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="descripcion" class="form-label">Descripción del Servicio *</label>
+            <textarea 
+              id="descripcion" 
+              name="descripcion" 
+              class="form-textarea" 
+              placeholder="Describa detalladamente el servicio que necesita..." 
+              required
+            ></textarea>
+          </div>
+
+          <div class="form-actions">
+            <button type="submit" class="form-btn form-btn-primary">
+              Enviar Solicitud
+            </button>
+            <button type="button" class="form-btn form-btn-secondary" onclick="window.location.href='index.html'">
+              Cancelar
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <div id="success-screen" class="service-card success-screen" style="display: none;">
+        <div class="success-icon">
+          <svg viewBox="0 0 24 24">
+            <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+          </svg>
+        </div>
+        <h2 class="success-title">¡Solicitud Enviada!</h2>
+        <p class="success-message">
+          Hemos recibido su solicitud de servicio. Nuestro equipo la revisará y 
+          nos pondremos en contacto con usted en las próximas 24 horas.
+        </p>
+        <div class="success-details" id="success-details"></div>
+        <div class="form-actions">
+          <button type="button" class="form-btn form-btn-primary" onclick="window.location.href='index.html'">
+            Volver al Inicio
+          </button>
+          <button type="button" class="form-btn form-btn-secondary" onclick="window.location.href='consultar-estado.html'">
+            Consultar Estado
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Establecer fecha mínima como hoy
+    document.getElementById('fecha').min = new Date().toISOString().split('T')[0];
+
+    const form = document.getElementById('service-form');
+    const formScreen = document.getElementById('form-screen');
+    const successScreen = document.getElementById('success-screen');
+    const successDetails = document.getElementById('success-details');
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      
+      const formData = new FormData(form);
+      const data = Object.fromEntries(formData);
+      
+      // Mostrar pantalla de éxito
+      formScreen.style.display = 'none';
+      successScreen.style.display = 'block';
+      
+      // Formatear fecha
+      const fecha = new Date(data.fecha);
+      const fechaFormateada = fecha.toLocaleDateString('es-ES', { 
+        year: 'numeric', 
+        month: 'long', 
+        day: 'numeric' 
+      });
+      
+      // Mostrar detalles
+      successDetails.innerHTML = `
+        <h3>Detalles de su solicitud:</h3>
+        <p><strong>Nombre:</strong> ${data.nombre}</p>
+        <p><strong>Correo:</strong> ${data.correo}</p>
+        <p><strong>Teléfono:</strong> ${data.telefono}</p>
+        <p><strong>Fecha:</strong> ${fechaFormateada}</p>
+        <p><strong>Hora:</strong> ${data.hora}</p>
+        <p><strong>Descripción:</strong> ${data.descripcion}</p>
+      `;
+      
+   // Obtener todas las solicitudes guardadas
+const solicitudes = JSON.parse(localStorage.getItem('solicitudes') || '[]');
+
+// Generar nuevo ID secuencial
+const nuevoId = solicitudes.length > 0 ? solicitudes[solicitudes.length - 1].id + 1 : 1;
+
+// Crear la nueva solicitud
+const nuevaSolicitud = {
+  id: nuevoId,
+  cliente: data.nombre,
+  correo: data.correo,
+  telefono: data.telefono,
+  fecha: fechaFormateada,
+  hora: data.hora,
+  descripcion: data.descripcion,
+  estado: 'pendiente'
+};
+
+// Guardar en localStorage
+solicitudes.push(nuevaSolicitud);
+localStorage.setItem('solicitudes', JSON.stringify(solicitudes));
+
+// Registrar acción de auditoría (si quieres mantener ese registro)
+const auditoria = JSON.parse(localStorage.getItem('auditoria') || '[]');
+auditoria.push({
+  usuario: data.correo,
+  accion: 'Creó solicitud',
+  tabla: 'Solicitudes',
+  detalle: `Solicitud ${nuevoId} creada por ${data.nombre}`,
+  fecha: new Date().toLocaleString()
+});
+localStorage.setItem('auditoria', JSON.stringify(auditoria));
+      localStorage.setItem('solicitudes', JSON.stringify(solicitudes));
+    });
+  </script>
+</body>
+</html>
+

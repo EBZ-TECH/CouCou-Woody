@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cuentas de Cobro — Admin</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="modules.css" />
+  <link rel="stylesheet" href="admin.css" />
+</head>
+<body>
+  <div class="admin-layout">
+    <aside class="admin-sidebar">
+      <div class="admin-logo"><h2>COUCOU Woody</h2><p>Panel de Administración</p></div>
+      <nav class="admin-nav">
+        <a href="admin-dashboard.html" class="nav-item"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z"/></svg><span>Dashboard</span></a>
+        <a href="admin-solicitudes.html" class="nav-item"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 3h-4.18C14.4 1.84 13.3 1 12 1c-1.3 0-2.4.84-2.82 2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 0c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zm2 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg><span>Solicitudes</span></a>
+        <a href="admin-clientes.html" class="nav-item"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg><span>Clientes</span></a>
+        <a href="admin-proyectos.html" class="nav-item"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 6h-2.18c.11-.31.18-.65.18-1 0-1.66-1.34-3-3-3-1.05 0-1.96.54-2.5 1.35l-.5.67-.5-.68C10.96 2.54 10.05 2 9 2 7.34 2 6 3.34 6 5c0 .35.07.69.18 1H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-5-2c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zM9 4c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zm11 15H4v-2h16v2zm0-5H4V8h5.08L7 10.83 8.62 12 11 8.76l1-1.36 1 1.36L15.38 12 17 10.83 14.92 8H20v6z"/></svg><span>Proyectos</span></a>
+        <a href="admin-inventario.html" class="nav-item"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.11 0-1.99.89-1.99 2L2 18c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V6c0-1.11-.89-2-2-2zm0 14H4v-6h16v6zm0-10H4V6h16v2z"/></svg><span>Inventario</span></a>
+        <a href="admin-cotizaciones.html" class="nav-item"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg><span>Cotizaciones</span></a>
+        <a href="admin-cuentas-cobro.html" class="nav-item active"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 14V6c0-1.1-.9-2-2-2H3c-1.1 0-2 .9-2 2v8c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zm-9-1c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3zm13-6v11c0 1.1-.9 2-2 2H4v-2h17V7h2z"/></svg><span>Cuentas de Cobro</span></a>
+        <a href="admin-personal.html" class="nav-item"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg><span>Personal</span></a>
+        <a href="admin-pagos.html" class="nav-item"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg><span>Pagos</span></a>
+        <a href="admin-auditoria.html" class="nav-item"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/></svg><span>Auditoría</span></a>
+      </nav>
+    </aside>
+
+    <main class="admin-main">
+      <header class="admin-header">
+        <div class="admin-header-left"><h1>Cuentas de Cobro</h1></div>
+        <div class="admin-header-right">
+          <button class="btn btn-secondary" onclick="logout()" style="display: flex; align-items: center; gap: 8px;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M17 7l-1.41 1.41L18.17 11H8v2h10.17l-2.58 2.58L17 17l5-5zM4 5h8V3H4c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h8v-2H4V5z"/>
+            </svg>
+            Cerrar Sesión
+          </button>
+        </div>
+      </header>
+
+      <div class="admin-content">
+        <p style="color: var(--muted-foreground); margin-bottom: 24px;">Administre y realice seguimiento a las cuentas de cobro</p>
+
+        <!-- Resumen -->
+        <div class="stats-grid" style="margin-bottom: 24px;">
+          <div class="stat-card">
+            <div class="stat-card-content">
+              <div class="stat-info"><h3>Total Pendiente</h3><p class="value" style="color: #ea580c;" id="totalPendiente">$0</p></div>
+              <div class="stat-icon orange"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z"/></svg></div>
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-card-content">
+              <div class="stat-info"><h3>Total Pagado</h3><p class="value" style="color: #16a34a;" id="totalPagado">$0</p></div>
+              <div class="stat-icon green"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></div>
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-card-content">
+              <div class="stat-info"><h3>Total Cuentas</h3><p class="value" id="totalCuentas">0</p></div>
+              <div class="stat-icon blue"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="data-table">
+          <div class="table-header">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+              <h2>Lista de Cuentas de Cobro</h2>
+              <button class="btn btn-primary" onclick="alert('Generar nueva cuenta próximamente')">Nueva Cuenta</button>
+            </div>
+            <div class="table-search">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+              <input type="text" id="searchInput" placeholder="Buscar cuenta...">
+            </div>
+          </div>
+          <table>
+            <thead>
+              <tr><th>ID</th><th>Cliente</th><th>Fecha Emisión</th><th style="text-align: right;">Monto</th><th>Estado</th><th style="text-align: right;">Acciones</th></tr>
+            </thead>
+            <tbody id="cuentas-tbody"></tbody>
+          </table>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- Modal Generar Pago -->
+  <div id="paymentModal" class="modal-overlay">
+    <div class="modal-content" style="max-width: 800px;">
+      <div class="modal-header">
+        <h2>Generar Link de Pago</h2>
+        <p id="paymentCuentaInfo"></p>
+      </div>
+      <div class="modal-body">
+        <div id="paymentMethodsScreen">
+          <p style="font-weight: 500; margin-bottom: 16px;">Seleccione el método de pago</p>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; margin-bottom: 20px;">
+            <button class="payment-method-btn" data-method="nequi" onclick="selectPaymentMethod('nequi')">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M7 10l5 5 5-5z"/></svg>
+              <span>Nequi</span>
+            </button>
+            <button class="payment-method-btn" data-method="bancolombia" onclick="selectPaymentMethod('bancolombia')">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 7V3H2v18h20V7H12zM6 19H4v-2h2v2zm0-4H4v-2h2v2zm0-4H4V9h2v2zm0-4H4V5h2v2zm4 12H8v-2h2v2zm0-4H8v-2h2v2zm0-4H8V9h2v2zm0-4H8V5h2v2zm10 12h-8v-2h2v-2h-2v-2h2v-2h-2V9h8v10zm-2-8h-2v2h2v-2zm0 4h-2v2h2v-2z"/></svg>
+              <span>Bancolombia</span>
+            </button>
+            <button class="payment-method-btn" data-method="pse" onclick="selectPaymentMethod('pse')">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.11 0-1.99.89-1.99 2L2 18c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V6c0-1.11-.89-2-2-2zm0 14H4v-6h16v6zm0-10H4V6h16v2z"/></svg>
+              <span>PSE</span>
+            </button>
+            <button class="payment-method-btn" data-method="wompi" onclick="selectPaymentMethod('wompi')">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M20 8H4V6h16v2zm0 2H4v6h16v-6zm0 8H4v2h16v-2zM2 4h20v16H2V4z"/></svg>
+              <span>Wompi</span>
+            </button>
+          </div>
+          <div id="methodInfo" style="background: #e0e7ff; border: 1px solid #c7d2fe; padding: 16px; border-radius: 8px; display: none;"></div>
+          <div style="background: #dbeafe; border: 1px solid #93c5fd; padding: 16px; border-radius: 8px; margin-top: 16px;">
+            <p style="font-size: 0.875rem; color: #1e40af; margin: 0 0 8px 0;"><strong>Nota:</strong> Para usar estas APIs en producción, necesitarás:</p>
+            <ul style="font-size: 0.875rem; color: #1e3a8a; margin: 0; padding-left: 20px;">
+              <li><strong>Nequi:</strong> https://conecta.nequi.com.co</li>
+              <li><strong>Bancolombia:</strong> https://www.grupobancolombia.com/empresas</li>
+              <li><strong>PSE:</strong> Operador autorizado (PayU, ePayco)</li>
+              <li><strong>Wompi:</strong> https://wompi.com</li>
+            </ul>
+          </div>
+        </div>
+
+        <div id="paymentLinkScreen" style="display: none;">
+          <div style="background: #dcfce7; border: 1px solid #86efac; padding: 16px; border-radius: 8px; margin-bottom: 20px;">
+            <div style="display: flex; gap: 12px; align-items: flex-start;">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="#15803d"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+              <div><h4 style="color: #14532d; margin: 0 0 4px 0;">Link de pago generado exitosamente</h4><p style="font-size: 0.875rem; color: #15803d; margin: 0;">Comparte este link con el cliente para que realice el pago.</p></div>
+            </div>
+          </div>
+          <div style="margin-bottom: 16px;">
+            <label style="display: block; font-weight: 500; margin-bottom: 8px;">Link de Pago</label>
+            <div style="display: flex; gap: 8px;">
+              <input type="text" id="generatedLink" class="form-input" readonly style="flex: 1; background: var(--muted);">
+              <button class="btn btn-secondary" onclick="copyLink()"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg></button>
+              <button class="btn btn-secondary" onclick="openLink()"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.11 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/></svg></button>
+            </div>
+          </div>
+          <div id="qrCodeSection" style="display: none; margin-bottom: 16px;">
+            <label style="display: block; font-weight: 500; margin-bottom: 8px;">Código QR (Nequi)</label>
+            <div style="background: var(--muted); padding: 16px; border-radius: 8px; display: flex; gap: 16px; align-items: center;">
+              <div style="background: white; padding: 16px; border-radius: 8px; border: 2px solid #9333ea;">
+                <svg width="96" height="96" viewBox="0 0 24 24" fill="#9333ea"><path d="M3 11h8V3H3v8zm2-6h4v4H5V5zM3 21h8v-8H3v8zm2-6h4v4H5v-4zm8-12v8h8V3h-8zm6 6h-4V5h4v4zm-6 4h2v2h-2v-2zm2 2h2v2h-2v-2zm-2 2h2v2h-2v-2zm4 0h2v4h-2v-4zm2-2h2v2h-2v-2zm0-4h2v2h-2v-2z"/></svg>
+              </div>
+              <div style="flex: 1;">
+                <p style="font-size: 0.875rem; color: var(--muted-foreground);">El cliente puede escanear este código QR desde la app de Nequi.</p>
+                <button class="btn btn-sm btn-secondary" style="margin-top: 8px;" onclick="copyLink()">Copiar código QR</button>
+              </div>
+            </div>
+          </div>
+          <div style="background: #fef3c7; border: 1px solid #fde047; padding: 16px; border-radius: 8px;">
+            <p style="font-size: 0.875rem; color: #854d0e; margin: 0 0 8px 0;"><strong>Próximos pasos:</strong></p>
+            <ol style="font-size: 0.875rem; color: #a16207; margin: 0; padding-left: 20px;">
+              <li>Envía el link al cliente por WhatsApp, email o SMS</li>
+              <li>El cliente completa el pago en la pasarela segura</li>
+              <li>Recibirás notificación cuando el pago sea confirmado</li>
+              <li>El estado se actualiza automáticamente</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" onclick="closePaymentModal()">Cerrar</button>
+        <button class="btn btn-primary" id="generateBtn" onclick="generatePayment()" style="background: #2563eb;"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.11 0-1.99.89-1.99 2L2 18c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V6c0-1.11-.89-2-2-2zm0 14H4v-6h16v6zm0-10H4V6h16v2z"/></svg> Generar Link</button>
+        <button class="btn btn-primary" id="copyBtn" onclick="copyAndClose()" style="background: #16a34a; display: none;"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg> Copiar y Enviar</button>
+      </div>
+    </div>
+  </div>
+
+  <style>
+    .payment-method-btn {
+      padding: 20px;
+      border: 2px solid var(--border);
+      border-radius: 8px;
+      background: white;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.2s;
+      font-weight: 500;
+    }
+    .payment-method-btn:hover { border-color: var(--primary); background: var(--muted); }
+    .payment-method-btn.selected { border-color: var(--primary); background: rgba(139, 63, 44, 0.1); }
+  </style>
+
+  <script src="db.js"></script>
+  <script>
+    let cuentas = [];
+    let selectedCuenta = null;
+    let selectedMethod = '';
+
+    function loadCuentas() {
+      cuentas = DB.get('cuentasCobro');
+      updateResumen();
+      renderCuentas(cuentas);
+    }
+
+    function updateResumen() {
+      const pendiente = cuentas.filter(c => c.estado === 'pendiente').reduce((sum, c) => sum + c.monto, 0);
+      const pagado = cuentas.filter(c => c.estado === 'pagada').reduce((sum, c) => sum + c.monto, 0);
+      document.getElementById('totalPendiente').textContent = `$${pendiente.toLocaleString('es-CO')}`;
+      document.getElementById('totalPagado').textContent = `$${pagado.toLocaleString('es-CO')}`;
+      document.getElementById('totalCuentas').textContent = cuentas.length;
+    }
+
+    function renderCuentas(data) {
+      const tbody = document.getElementById('cuentas-tbody');
+      if (data.length === 0) {
+        tbody.innerHTML = '<tr><td colspan="6" style="text-align: center; padding: 40px;">No hay cuentas</td></tr>';
+        return;
+      }
+      tbody.innerHTML = data.map(c => `
+        <tr>
+          <td>#${c.id}</td>
+          <td>${c.cliente}</td>
+          <td>${c.fecha}</td>
+          <td style="text-align: right;"><strong>$${c.monto.toLocaleString('es-CO')}</strong></td>
+          <td><span class="badge badge-${c.estado}">${c.estado}</span></td>
+          <td style="text-align: right;">
+            ${c.estado !== 'pagada' ? `
+              <button class="btn btn-sm btn-primary" onclick="openPaymentModal('${c.id}')" style="background: #2563eb;">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.11 0-1.99.89-1.99 2L2 18c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V6c0-1.11-.89-2-2-2zm0 14H4v-6h16v6zm0-10H4V6h16v2z"/></svg>
+                Generar Pago
+              </button>
+            ` : ''}
+            <button class="btn btn-icon btn-ghost" onclick="exportarPDF('${c.id}')" title="PDF"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg></button>
+            <button class="btn btn-icon btn-ghost" onclick="enviarEmail('${c.id}')" title="Email"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg></button>
+            ${c.estado !== 'pagada' ? `<button class="btn btn-icon btn-ghost" onclick="marcarPagada('${c.id}')" title="Marcar pagada" style="color: #16a34a;"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></button>` : ''}
+          </td>
+        </tr>
+      `).join('');
+    }
+
+    function openPaymentModal(id) {
+      selectedCuenta = cuentas.find(c => c.id === id);
+      if (!selectedCuenta) return;
+      document.getElementById('paymentCuentaInfo').textContent = `Cuenta #${selectedCuenta.id} - ${selectedCuenta.cliente} | Monto: $${selectedCuenta.monto.toLocaleString('es-CO')} COP`;
+      document.getElementById('paymentMethodsScreen').style.display = 'block';
+      document.getElementById('paymentLinkScreen').style.display = 'none';
+      document.getElementById('generateBtn').style.display = 'inline-flex';
+      document.getElementById('copyBtn').style.display = 'none';
+      selectedMethod = '';
+      document.querySelectorAll('.payment-method-btn').forEach(btn => btn.classList.remove('selected'));
+      document.getElementById('paymentModal').classList.add('show');
+    }
+
+    function selectPaymentMethod(method) {
+      selectedMethod = method;
+      document.querySelectorAll('.payment-method-btn').forEach(btn => btn.classList.remove('selected'));
+      document.querySelector(`[data-method="${method}"]`).classList.add('selected');
+      
+      const info = {
+        nequi: '<h4 style="margin: 0 0 8px 0;">Pago con Nequi</h4><p style="font-size: 0.875rem; margin: 0;">Genera código QR o link para pago desde app Nequi. Confirmación instantánea.</p>',
+        bancolombia: '<h4 style="margin: 0 0 8px 0;">Botón de Pago Bancolombia</h4><p style="font-size: 0.875rem; margin: 0;">Link seguro que acepta todas las tarjetas y PSE. Alta seguridad.</p>',
+        pse: '<h4 style="margin: 0 0 8px 0;">PSE - Pagos Seguros</h4><p style="font-size: 0.875rem; margin: 0;">Débito directo desde cuenta bancaria. Compatible con todos los bancos.</p>',
+        wompi: '<h4 style="margin: 0 0 8px 0;">Wompi</h4><p style="font-size: 0.875rem; margin: 0;">Pasarela moderna con tarjetas, Nequi y otros métodos.</p>'
+      };
+      
+      const infoDiv = document.getElementById('methodInfo');
+      infoDiv.innerHTML = info[method];
+      infoDiv.style.display = 'block';
+    }
+
+    function generatePayment() {
+      if (!selectedMethod) { alert('Seleccione un método de pago'); return; }
+      
+      // Simular generación de link
+      const mockLinks = {
+        nequi: `https://app.nequi.com.co/pagar?ref=${selectedCuenta.id}&amount=${selectedCuenta.monto}`,
+        bancolombia: `https://www.bancolombia.com/boton-pago?ref=${selectedCuenta.id}&monto=${selectedCuenta.monto}`,
+        pse: `https://pse.com.co/pagos?ref=${selectedCuenta.id}&valor=${selectedCuenta.monto}`,
+        wompi: `https://checkout.wompi.co/l/${selectedCuenta.id}`
+      };
+      
+      document.getElementById('generatedLink').value = mockLinks[selectedMethod];
+      document.getElementById('paymentMethodsScreen').style.display = 'none';
+      document.getElementById('paymentLinkScreen').style.display = 'block';
+      document.getElementById('generateBtn').style.display = 'none';
+      document.getElementById('copyBtn').style.display = 'inline-flex';
+      
+      if (selectedMethod === 'nequi') {
+        document.getElementById('qrCodeSection').style.display = 'block';
+      }
+      
+      alert('Link de pago generado exitosamente');
+    }
+
+    function copyLink() {
+      const link = document.getElementById('generatedLink').value;
+      navigator.clipboard.writeText(link);
+      alert('Link copiado al portapapeles');
+    }
+
+    function copyAndClose() {
+      copyLink();
+      alert('Link copiado. Ahora puedes enviarlo al cliente.');
+      closePaymentModal();
+    }
+
+    function marcarPagada(id) {
+      if (!confirm('¿Marcar como pagada?')) return;
+      DB.update('cuentasCobro', id, { estado: 'pagada' });
+      DB.logAudit('admin@lourdes.com', 'Marcó cuenta como pagada', 'Cuentas de Cobro', `Cuenta #${id}`);
+      alert('Cuenta marcada como pagada');
+      loadCuentas();
+    }
+
+    function exportarPDF(id) { alert('Generando PDF cuenta #' + id); }
+    function enviarEmail(id) { alert('Enviando cuenta #' + id + ' por email'); }
+    function closePaymentModal() { document.getElementById('paymentModal').classList.remove('show'); }
+    function logout() { if (confirm('¿Cerrar sesión?')) { localStorage.removeItem('user_session'); window.location.href = 'index.html'; } }
+
+    document.getElementById('searchInput').addEventListener('input', (e) => {
+      const term = e.target.value.toLowerCase();
+      const filtered = cuentas.filter(c => c.cliente.toLowerCase().includes(term) || c.proyecto?.toLowerCase().includes(term));
+      renderCuentas(filtered);
+    });
+
+    document.getElementById('paymentModal').addEventListener('click', (e) => { if (e.target.id === 'paymentModal') closePaymentModal(); });
+
+    window.addEventListener('DOMContentLoaded', loadCuentas);
+  </script>
+</body>
+</html>
