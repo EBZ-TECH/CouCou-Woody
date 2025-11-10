@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Consultar Estado — Coucou Woody</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="modules.css" />
+  <style>
+    .consult-page {
+      min-height: 100vh;
+      background: var(--bg);
+      padding: 20px;
+    }
+    .consult-container {
+      max-width: 1000px;
+      margin: 40px auto;
+    }
+    .consult-card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 40px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      margin-bottom: 24px;
+    }
+    .consult-title {
+      font-size: 32px;
+      font-weight: 700;
+      color: #4a2e27;
+      margin-bottom: 8px;
+    }
+    .consult-subtitle {
+      color: #666;
+      margin-bottom: 30px;
+      font-size: 14px;
+    }
+    .search-form {
+      display: flex;
+      gap: 16px;
+      align-items: flex-end;
+    }
+    .search-group {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .form-label {
+      font-weight: 500;
+      color: #4a2e27;
+      font-size: 14px;
+    }
+    .form-input {
+      padding: 12px 16px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      font-size: 14px;
+      font-family: 'Poppins', sans-serif;
+      background: #f9f9f9;
+      transition: border-color 0.3s;
+    }
+    .form-input:focus {
+      outline: none;
+      border-color: #a54939;
+      background: #fff;
+    }
+    .search-btn {
+      background: #a54939;
+      color: #fff;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.3s;
+      font-family: 'Poppins', sans-serif;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .search-btn:hover {
+      background: #8C4D3C;
+    }
+    .results-section {
+      margin-top: 24px;
+    }
+    .results-title {
+      font-size: 24px;
+      font-weight: 700;
+      color: #4a2e27;
+      margin-bottom: 20px;
+    }
+    .solicitud-card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 30px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      margin-bottom: 20px;
+    }
+    .solicitud-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 20px;
+    }
+    .solicitud-title {
+      font-size: 20px;
+      font-weight: 700;
+      color: #4a2e27;
+      margin-bottom: 4px;
+    }
+    .solicitud-subtitle {
+      color: #666;
+      font-size: 14px;
+    }
+    .badge {
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 600;
+      display: inline-block;
+    }
+    .badge-pendiente {
+      background: #e3f2fd;
+      color: #1976d2;
+    }
+    .badge-aceptada {
+      background: #d4edda;
+      color: #28a745;
+    }
+    .badge-rechazada {
+      background: #f8d7da;
+      color: #dc3545;
+    }
+    .solicitud-info {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+    .info-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: #666;
+      font-size: 14px;
+    }
+    .info-item svg {
+      width: 16px;
+      height: 16px;
+      fill: #666;
+    }
+    .solicitud-desc {
+      margin-bottom: 20px;
+    }
+    .solicitud-desc h4 {
+      font-size: 16px;
+      font-weight: 600;
+      color: #4a2e27;
+      margin-bottom: 8px;
+    }
+    .solicitud-desc p {
+      color: #666;
+      line-height: 1.6;
+    }
+    .status-message {
+      padding: 16px;
+      border-radius: 8px;
+      margin-top: 16px;
+    }
+    .status-pendiente {
+      background: #e3f2fd;
+      border: 1px solid #90caf9;
+      color: #1565c0;
+    }
+    .status-aceptada {
+      background: #d4edda;
+      border: 1px solid #c3e6cb;
+      color: #155724;
+    }
+    .status-rechazada {
+      background: #f8d7da;
+      border: 1px solid #f5c6cb;
+      color: #721c24;
+    }
+    .no-results {
+      text-align: center;
+      padding: 60px 20px;
+      color: #666;
+    }
+    .no-results p {
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="top-icons">
+      <a href="index.html" class="icon-button">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="#a54939">
+          <path d="M12 3L3 10h3v8h6v-5h0v5h6v-8h3z"/>
+        </svg>
+      </a>
+      <a href="solicitar-servicio.html" class="icon-button" style="text-decoration: none;">
+        <span style="color: #a54939; font-weight: 600; font-size: 14px;">Solicitar</span>
+      </a>
+      <a href="consultar-estado.html" class="icon-button" style="text-decoration: none;">
+        <span style="color: #a54939; font-weight: 600; font-size: 14px;">Consultar</span>
+      </a>
+      <a href="login.html" class="icon-button">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="#a54939">
+          <circle cx="12" cy="8" r="4"/>
+          <path d="M4 20c0-4 4-6 8-6s8 2 8 6"/>
+        </svg>
+      </a>
+    </div>
+  </header>
+
+  <div class="consult-page">
+    <div class="consult-container">
+      <div class="consult-card">
+        <h1 class="consult-title">Consultar Estado de Solicitud</h1>
+        <p class="consult-subtitle">
+          Ingrese su correo electrónico para ver el estado de sus solicitudes
+        </p>
+
+        <form id="search-form" class="search-form">
+          <div class="search-group">
+            <label for="email" class="form-label">Correo Electrónico</label>
+            <input 
+              type="email" 
+              id="email" 
+              name="email" 
+              class="form-input" 
+              placeholder="correo@ejemplo.com" 
+              required
+            />
+          </div>
+          <button type="submit" class="search-btn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+            </svg>
+            Buscar
+          </button>
+        </form>
+      </div>
+
+      <div id="results-section" class="results-section" style="display: none;">
+        <h2 class="results-title" id="results-title"></h2>
+        <div id="results-container"></div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const searchForm = document.getElementById('search-form');
+    const resultsSection = document.getElementById('results-section');
+    const resultsContainer = document.getElementById('results-container');
+    const resultsTitle = document.getElementById('results-title');
+
+    // Datos de prueba iniciales
+    const mockData = [
+      {
+        id: 1,
+        cliente: 'Juan Pérez',
+        correo: 'cliente@test.com',
+        telefono: '300 123 4567',
+        fecha: '15 de marzo de 2024',
+        hora: '10:00',
+        descripcion: 'Necesito reparación de muebles de madera en mi hogar.',
+        estado: 'pendiente'
+      },
+      {
+        id: 2,
+        cliente: 'María García',
+        correo: 'cliente@test.com',
+        telefono: '300 987 6543',
+        fecha: '20 de marzo de 2024',
+        hora: '14:30',
+        descripcion: 'Solicito cotización para diseño de muebles personalizados.',
+        estado: 'aceptada'
+      }
+    ];
+
+    function getEstadoBadge(estado) {
+      const badges = {
+        'pendiente': '<span class="badge badge-pendiente">Pendiente</span>',
+        'aceptada': '<span class="badge badge-aceptada">Aceptada</span>',
+        'rechazada': '<span class="badge badge-rechazada">Rechazada</span>'
+      };
+      return badges[estado] || `<span class="badge">${estado}</span>`;
+    }
+
+    function getStatusMessage(estado) {
+      const messages = {
+        'pendiente': {
+          class: 'status-pendiente',
+          text: '⏳ Su solicitud está siendo revisada por nuestro equipo.'
+        },
+        'aceptada': {
+          class: 'status-aceptada',
+          text: '✓ Su solicitud ha sido aceptada. Nos pondremos en contacto con usted pronto.'
+        },
+        'rechazada': {
+          class: 'status-rechazada',
+          text: '✗ Lo sentimos, su solicitud no pudo ser procesada en este momento.'
+        }
+      };
+      return messages[estado] || { class: '', text: '' };
+    }
+
+    function renderSolicitud(solicitud) {
+      const statusMsg = getStatusMessage(solicitud.estado);
+      return `
+        <div class="solicitud-card">
+          <div class="solicitud-header">
+            <div>
+              <h3 class="solicitud-title">Solicitud #${solicitud.id}</h3>
+              <p class="solicitud-subtitle">${solicitud.cliente}</p>
+            </div>
+            ${getEstadoBadge(solicitud.estado)}
+          </div>
+          <div class="solicitud-info">
+            <div class="info-item">
+              <svg viewBox="0 0 24 24">
+                <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+              </svg>
+              <span>${solicitud.correo}</span>
+            </div>
+            <div class="info-item">
+              <svg viewBox="0 0 24 24">
+                <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+              </svg>
+              <span>${solicitud.telefono}</span>
+            </div>
+            <div class="info-item">
+              <svg viewBox="0 0 24 24">
+                <path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z"/>
+              </svg>
+              <span>${solicitud.fecha}</span>
+            </div>
+            <div class="info-item">
+              <svg viewBox="0 0 24 24">
+                <path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/>
+              </svg>
+              <span>${solicitud.hora}</span>
+            </div>
+          </div>
+          <div class="solicitud-desc">
+            <h4>Descripción:</h4>
+            <p>${solicitud.descripcion}</p>
+          </div>
+          <div class="status-message ${statusMsg.class}">
+            <p>${statusMsg.text}</p>
+          </div>
+        </div>
+      `;
+    }
+
+    searchForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const email = document.getElementById('email').value.toLowerCase();
+      
+      // Buscar en localStorage y mockData
+      const stored = JSON.parse(localStorage.getItem('solicitudes') || '[]');
+      const allSolicitudes = [...mockData, ...stored];
+      const found = allSolicitudes.filter(s => s.correo.toLowerCase() === email);
+      
+      if (found.length === 0) {
+        resultsSection.style.display = 'block';
+        resultsContainer.innerHTML = `
+          <div class="consult-card no-results">
+            <p>No se encontraron solicitudes para este correo electrónico.</p>
+          </div>
+        `;
+      } else {
+        resultsSection.style.display = 'block';
+        resultsTitle.textContent = `Se encontraron ${found.length} solicitud(es)`;
+        resultsContainer.innerHTML = found.map(s => renderSolicitud(s)).join('');
+      }
+    });
+  </script>
+</body>
+</html>
+

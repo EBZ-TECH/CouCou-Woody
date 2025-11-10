@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pagos — Admin Coucou Woody</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="modules.css" />
+  <link rel="stylesheet" href="admin.css" />
+</head>
+<body>
+  <div class="admin-layout">
+    <aside class="admin-sidebar">
+      <div class="admin-logo"><h2>COUCOU Woody</h2><p>Panel de Administración</p></div>
+      <nav class="admin-nav">
+        <a href="admin-dashboard.html" class="nav-item"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z"/></svg><span>Dashboard</span></a>
+        <a href="admin-solicitudes.html" class="nav-item"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 3h-4.18C14.4 1.84 13.3 1 12 1c-1.3 0-2.4.84-2.82 2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 0c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zm2 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg><span>Solicitudes</span></a>
+        <a href="admin-clientes.html" class="nav-item"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg><span>Clientes</span></a>
+        <a href="admin-proyectos.html" class="nav-item"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 6h-2.18c.11-.31.18-.65.18-1 0-1.66-1.34-3-3-3-1.05 0-1.96.54-2.5 1.35l-.5.67-.5-.68C10.96 2.54 10.05 2 9 2 7.34 2 6 3.34 6 5c0 .35.07.69.18 1H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-5-2c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zM9 4c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zm11 15H4v-2h16v2zm0-5H4V8h5.08L7 10.83 8.62 12 11 8.76l1-1.36 1 1.36L15.38 12 17 10.83 14.92 8H20v6z"/></svg><span>Proyectos</span></a>
+        <a href="admin-inventario.html" class="nav-item"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.11 0-1.99.89-1.99 2L2 18c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V6c0-1.11-.89-2-2-2zm0 14H4v-6h16v6zm0-10H4V6h16v2z"/></svg><span>Inventario</span></a>
+        <a href="admin-cotizaciones.html" class="nav-item"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg><span>Cotizaciones</span></a>
+        <a href="admin-cuentas-cobro.html" class="nav-item"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 14V6c0-1.1-.9-2-2-2H3c-1.1 0-2 .9-2 2v8c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zm-9-1c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3zm13-6v11c0 1.1-.9 2-2 2H4v-2h17V7h2z"/></svg><span>Cuentas de Cobro</span></a>
+        <a href="admin-personal.html" class="nav-item"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg><span>Personal</span></a>
+        <a href="admin-pagos.html" class="nav-item active"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg><span>Pagos</span></a>
+        <a href="admin-auditoria.html" class="nav-item"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/></svg><span>Auditoría</span></a>
+      </nav>
+    </aside>
+
+    <main class="admin-main">
+      <header class="admin-header">
+        <div class="admin-header-left"><h1>Gestión de Pagos</h1></div>
+        <div class="admin-header-right">
+          <button class="btn btn-secondary" onclick="logout()" style="display: flex; align-items: center; gap: 8px;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M17 7l-1.41 1.41L18.17 11H8v2h10.17l-2.58 2.58L17 17l5-5zM4 5h8V3H4c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h8v-2H4V5z"/>
+            </svg>
+            Cerrar Sesión
+          </button>
+        </div>
+      </header>
+
+      <div class="admin-content">
+        <p style="color: var(--muted-foreground); margin-bottom: 24px;">Registro y seguimiento de pagos recibidos</p>
+
+        <!-- Tarjetas de resumen -->
+        <div class="stats-grid" style="margin-bottom: 24px;">
+          <div class="stat-card">
+            <div class="stat-card-content">
+              <div class="stat-info"><h3>Total Recibido</h3><p class="value" style="color: #16a34a;" id="totalRecibido">$0</p></div>
+              <div class="stat-icon green"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z"/></svg></div>
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-card-content">
+              <div class="stat-info"><h3>Pagos Registrados</h3><p class="value" id="totalPagos">0</p></div>
+              <div class="stat-icon blue"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg></div>
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-card-content">
+              <div class="stat-info"><h3>Método Más Usado</h3><p class="value" style="font-size: 1.25rem;" id="metodoMasUsado">-</p></div>
+              <div class="stat-icon purple"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.11 0-1.99.89-1.99 2L2 18c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V6c0-1.11-.89-2-2-2zm0 14H4v-6h16v6zm0-10H4V6h16v2z"/></svg></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="data-table">
+          <div class="table-header">
+            <h2>Detalle de Pagos</h2>
+            <div class="table-search">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+              <input type="text" id="searchInput" placeholder="Buscar pago...">
+            </div>
+          </div>
+          <table>
+            <thead>
+              <tr><th>ID Pago</th><th>ID Cuenta Cobro</th><th>Cliente</th><th>Fecha Pago</th><th style="text-align: right;">Monto</th><th>Método</th><th>Referencia</th><th>Estado</th></tr>
+            </thead>
+            <tbody id="pagos-tbody"><tr><td colspan="8" style="text-align: center; padding: 40px;">Cargando...</td></tr></tbody>
+          </table>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="db.js"></script>
+  <script>
+    let pagos = [];
+    let cuentasCobro = [];
+
+    function loadPagos() {
+      pagos = DB.get('pagos');
+      cuentasCobro = DB.get('cuentasCobro');
+      updateResumen();
+      renderPagos(pagos);
+    }
+
+    function updateResumen() {
+      const total = pagos.reduce((sum, p) => sum + p.monto, 0);
+      document.getElementById('totalRecibido').textContent = `$${total.toLocaleString('es-CO')}`;
+      document.getElementById('totalPagos').textContent = pagos.length;
+      
+      // Calcular método más usado
+      const metodos = {};
+      pagos.forEach(p => {
+        metodos[p.metodoPago] = (metodos[p.metodoPago] || 0) + 1;
+      });
+      const masUsado = Object.entries(metodos).sort((a, b) => b[1] - a[1])[0];
+      document.getElementById('metodoMasUsado').textContent = masUsado ? masUsado[0] : '-';
+    }
+
+    function renderPagos(data) {
+      const tbody = document.getElementById('pagos-tbody');
+      if (data.length === 0) {
+        tbody.innerHTML = '<tr><td colspan="8" style="text-align: center; padding: 40px;">No hay pagos registrados</td></tr>';
+        return;
+      }
+      
+      tbody.innerHTML = data.map(p => {
+        const cuenta = cuentasCobro.find(c => c.id === p.cuentaCobroId);
+        return `
+          <tr>
+            <td>#${p.id}</td>
+            <td><a href="#" onclick="verCuenta('${p.cuentaCobroId}'); return false;" style="color: var(--primary); text-decoration: underline;">#${p.cuentaCobroId}</a></td>
+            <td>${cuenta?.cliente || p.cliente || 'N/A'}</td>
+            <td>${p.fecha}</td>
+            <td style="text-align: right;"><strong>$${p.monto.toLocaleString('es-CO')}</strong></td>
+            <td>
+              <div style="display: flex; align-items: center; gap: 8px;">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.11 0-1.99.89-1.99 2L2 18c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V6c0-1.11-.89-2-2-2zm0 14H4v-6h16v6zm0-10H4V6h16v2z"/></svg>
+                ${p.metodoPago}
+              </div>
+            </td>
+            <td style="font-family: monospace; font-size: 0.8rem;">${p.referencia}</td>
+            <td><span class="badge badge-${p.estado}">${p.estado}</span></td>
+          </tr>
+        `;
+      }).join('');
+    }
+
+    function verCuenta(cuentaId) {
+      const cuenta = cuentasCobro.find(c => c.id === cuentaId);
+      if (cuenta) {
+        alert(`Cuenta de Cobro #${cuenta.id}\nCliente: ${cuenta.cliente}\nProyecto: ${cuenta.proyecto}\nMonto: $${cuenta.monto.toLocaleString('es-CO')}\nEstado: ${cuenta.estado}\n\nClick OK para ir a Cuentas de Cobro`);
+        // Opcional: redirigir
+        // window.location.href = 'admin-cuentas-cobro.html';
+      }
+    }
+
+    function logout() {
+      if (confirm('¿Cerrar sesión?')) {
+        localStorage.removeItem('user_session');
+        window.location.href = 'index.html';
+      }
+    }
+
+    document.getElementById('searchInput').addEventListener('input', (e) => {
+      const term = e.target.value.toLowerCase();
+      const filtered = pagos.filter(p => 
+        p.referencia.toLowerCase().includes(term) || 
+        p.metodoPago.toLowerCase().includes(term) ||
+        p.cliente?.toLowerCase().includes(term)
+      );
+      renderPagos(filtered);
+    });
+
+    window.addEventListener('DOMContentLoaded', loadPagos);
+  </script>
+</body>
+</html>
