@@ -1,0 +1,233 @@
+/* ================================
+   ESTILOS GENERALES DEL BODY
+   ================================ */
+body {
+  font-family: Arial, sans-serif; /* Fuente principal para todo el sitio */
+  background: #fff;              /* Fondo blanco */
+  display: flex;                 /* Usamos Flexbox para centrar el formulario */
+  justify-content: center;       /* Centrado horizontal */
+  align-items: flex-start;       /* Alineación superior (no totalmente al centro vertical) */
+  margin: 0;                     /* Eliminamos márgenes por defecto del body */
+  padding: 20px;                 /* Pequeño espacio interno alrededor del contenido */
+}
+
+/* ==== Estilos para la barra superior ==== */
+.topbar {
+  position: fixed;        /* Fija la barra en pantalla */
+  top: 0;                 /* La pega al borde superior */
+  left: 0;                /* La alinea al borde izquierdo */
+  width: 100%;            /* Ocupa todo el ancho de la pantalla */
+  background: #fff;       /* Fondo blanco (puedes cambiarlo) */
+  padding: 8px 16px;      /* Espaciado interno */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1); /* Sombrilla sutil debajo */
+  z-index: 1000;          /* Asegura que quede por encima del contenido */
+}
+
+/* Contenedor de los íconos */
+.top-icons {
+  display: flex;          /* Los coloca en fila */
+  justify-content: flex-start; /* Íconos pegados a la izquierda */
+  gap: 16px;              /* Espacio entre íconos */
+}
+
+/* Botones de íconos */
+.icon-button {
+  background: none;       /* Sin fondo */
+  border: none;           /* Sin borde */
+  cursor: pointer;        /* Cursor de mano */
+  padding: 6px;           /* Espaciado interno */
+  border-radius: 8px;     /* Bordes redondeados */
+  transition: background 0.3s;
+}
+
+/* Efecto hover */
+.icon-button:hover {
+  background: rgba(165, 73, 57, 0.1); /* Fondo suave al pasar el ratón */
+}
+
+/* Ajuste del body para que el contenido no quede oculto bajo el header */
+body {
+  margin: 0;              /* Elimina márgenes por defecto */
+  padding-top: 60px;      /* Deja espacio igual a la altura del header */
+}
+
+
+/* ================================
+   CONTENEDOR PRINCIPAL DEL FORMULARIO
+   ================================ */
+form {
+  background: #A03C29;           /* Color de fondo rojo ladrillo */
+  color: #fff;                   /* Texto blanco dentro del formulario */
+  padding: 25px 30px;            /* Espaciado interno (vertical 25px, horizontal 30px) */
+  border-radius: 20px;           /* Bordes redondeados del formulario */
+  width: 420px;                  /* Ancho fijo del formulario */
+  box-sizing: border-box;        /* Incluye padding en el ancho total (mejor control de medidas) */
+  text-align: center;            /* Centra el título y algunos textos */
+  margin: 0 auto;                /* Asegura que el form esté centrado en pantallas grandes */
+}
+
+/* ================================
+   TÍTULO DEL FORMULARIO
+   ================================ */
+form h2 {
+  font-size: 18px;               /* Tamaño de la letra del título */
+  margin-bottom: 16px;           /* Espacio inferior para separar del primer campo */
+}
+
+/* ================================
+   ETIQUETAS (labels)
+   ================================ */
+label {
+  display: block;                /* Cada label ocupa toda la línea */
+  text-align: left;              /* Alinea el texto de la etiqueta a la izquierda */
+  margin: 12px 0 6px;            /* Márgenes (arriba 12px, abajo 6px) para separarlos de inputs */
+  font-size: 18px;               /* Tamaño de letra */
+}
+
+/* ================================
+   CAMPOS DE TEXTO Y TEXTAREA
+   ================================ */
+input[type="text"],
+input[type="tel"],
+input[type="email"],
+textarea {
+  width: 100%;                   /* Que ocupen todo el ancho disponible */
+  padding: 12px 15px;            /* Espaciado interno (vertical 12px, horizontal 15px) */
+  border: none;                  /* Sin bordes */
+  border-radius: 20px;           /* Bordes redondeados */
+  background: #E0C4AB;           /* Fondo beige */
+  font-size: 14px;               /* Tamaño de letra */
+  box-sizing: border-box;        /* Padding incluido en el ancho */
+  margin-bottom: 12px;           /* Espacio inferior entre campos */
+  outline: none;                 /* Quita borde azul al hacer clic */
+}
+
+/* Ajustes específicos para el área de texto */
+textarea {
+  height: 150px;                 /* Alto fijo para que sea visible */
+  resize: none;                  /* El usuario no puede cambiar el tamaño */
+  border-radius: 15px;           /* Esquinas menos redondeadas que los inputs */
+}
+
+/* ================================
+   BOTÓN DE ENVÍO
+   ================================ */
+.btn {
+  width: 100%;                   /* Ocupa todo el ancho */
+  padding: 15px;                 /* Espaciado interno */
+  background: #6B3A2D;           /* Fondo marrón oscuro */
+  color: #E0C4AB;                /* Texto beige claro */
+  border: none;                  /* Sin borde */
+  border-radius: 15px;           /* Bordes redondeados */
+  font-size: 16px;               /* Tamaño de letra */
+  font-weight: bold;             /* Negrita */
+  cursor: pointer;               /* Cambia el cursor a "mano" */
+  margin-top: 15px;              /* Espacio superior respecto al textarea */
+  transition: background 0.3s ease; /* Animación suave al cambiar de color */
+}
+
+/* Efecto hover para el botón */
+.btn:hover {
+  background: #3e140f;           /* Se oscurece al pasar el mouse */
+}
+
+/* ================================
+   LINKS DE POLÍTICAS Y TÉRMINOS
+   ================================ */
+form div a {
+  display: inline-block;         /* Se alinean en fila pero se comportan como bloques */
+  font-size: 12px;               /* Texto más pequeño */
+  color: #f0e5da;                /* Color beige claro */
+  text-decoration: none;         /* Sin subrayado */
+  margin: 5px;                   /* Espacio alrededor */
+}
+
+/* Subrayado al pasar el mouse */
+form div a:hover {
+  text-decoration: underline;    /* Subraya el enlace */
+}
+
+/* ================================
+   RESPONSIVE: ADAPTACIÓN EN CELULAR
+   ================================ */
+@media (max-width: 768px) {       /* Se activa en pantallas menores a 768px */
+  form {
+    width: 90%;                  /* En lugar de ancho fijo, ocupa 90% de la pantalla */
+    padding: 20px;               /* Menos padding para caber en móvil */
+  }
+
+  form h2 {
+    font-size: 16px;             /* Texto más pequeño */
+  }
+
+  input, textarea, .btn {
+    font-size: 14px;             /* Texto adaptado a pantallas pequeñas */
+  }
+}
+
+/* ================================
+   LAYOUT PRINCIPAL (3 columnas)
+   ================================ */
+.layout {
+  display: flex;                 /* Flexbox para organizar columnas */
+  justify-content: center;       /* Centra el formulario horizontalmente */
+  align-items: flex-start;       /* Alinea las columnas arriba */
+  gap: 20px;                     /* Espacio entre las columnas */
+  margin-top: 20px;              /* Separación superior */
+}
+
+/* ================================
+   COLUMNAS DE IMÁGENES
+   ================================ */
+.columna {
+  display: flex;                 /* Activa flexbox dentro de la columna */
+  flex-direction: column;        /* Coloca imágenes en columna vertical */
+  gap: 15px;                     /* Espacio entre imágenes */
+}
+
+/* Imágenes dentro de columnas */
+.columna img {
+  width: 150px;                  /* Tamaño uniforme de las imágenes */
+  border-radius: 8px;            /* Bordes redondeados */
+  object-fit: cover;             /* Ajusta imagen sin deformar */
+}
+
+/* ================================
+   RESPONSIVE: PANTALLAS PEQUEÑAS
+   ================================ */
+@media (max-width: 992px) {
+  .layout {
+    flex-direction: column;      /* Pasa a diseño vertical en móvil */
+    align-items: center;
+  }
+
+  .columna {
+    flex-direction: row;         /* Pone imágenes en fila */
+    flex-wrap: wrap;             /* Deja que salten a otra línea */
+    justify-content: center;
+  }
+
+  .columna img {
+    width: 100px;                /* Imágenes más pequeñas en móvil */
+  }
+}
+
+/* Campo de subida de imagen */
+input[type="file"] {
+  display: block;
+  margin-bottom: 15px;
+  font-size: 14px;
+}
+
+/* Vista previa de la imagen */
+#preview {
+  margin-top: 15px;
+  text-align: center;
+}
+
+#preview img {
+  max-width: 100%;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  margin-top: 10px;
+}
